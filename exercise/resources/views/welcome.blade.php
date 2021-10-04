@@ -11,5 +11,6 @@
     @include('nav.navigation')
     
     <h1>Welcome to My Website</h1><br>
+    <h6>:D</h6>
 </body>
 </html>
