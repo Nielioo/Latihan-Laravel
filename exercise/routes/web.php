@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Project;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,19 +30,9 @@ Route::get('/home', function () {
     ]);
 });
 
-Route::get('/project', function () {
-    return view('project', [
-        "title" => "ProjectPage",
-        "projects" => Project::getAllProjectData()
-    ]);
-});
+Route::get('/project', [ProjectController::class,'project']);
 
-Route::get('/project/{code}', function ($code) {
-    return view('showProject', [
-        "title" => "ProjectPage",
-        "projects" => Project::getDataByCode($code)
-    ]);
-});
+Route::get('/project/{code}', [ProjectController::class,'showProject']);
 
 Route::get('/contact', function () {
     // return view('contact');

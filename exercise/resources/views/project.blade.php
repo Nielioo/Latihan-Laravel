@@ -53,7 +53,7 @@
                         </td>
 
                         {{-- Course --}}
-                        <td> {{ $pro['course'] }} </td>
+                        <td> {{ $pro['title'] }} </td>
 
                         {{-- Semester --}}
                         <td> {{ $semester }} </td>
