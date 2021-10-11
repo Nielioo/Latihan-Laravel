@@ -16,13 +16,13 @@ use App\Models\Project;
 
 Route::get('/', function () {
     // return "Hello Friends";
-    return view('welcome',[
+    return view('welcome', [
         "title" => "WelcomePage"
     ]);
 });
 
 Route::get('/home', function () {
-    return view('home',[
+    return view('home', [
         "title" => "HomePage",
         "name" => "Daniel",
         "email" => "danielaprillio@gmail.com",
@@ -31,15 +31,22 @@ Route::get('/home', function () {
 });
 
 Route::get('/project', function () {
-    return view('project',[
+    return view('project', [
         "title" => "ProjectPage",
         "projects" => Project::getAllProjectData()
     ]);
 });
 
+Route::get('/project/{code}', function ($code) {
+    return view('showProject', [
+        "title" => "ProjectPage",
+        "projects" => Project::getDataByCode($code)
+    ]);
+});
+
 Route::get('/contact', function () {
     // return view('contact');
-    return view('contactWithLayout',[
+    return view('contactWithLayout', [
         "title" => "ContactPage",
         "name" => "Daniel",
         "email" => "danielaprillio@gmail.com",

@@ -22,6 +22,7 @@
                 <tr>
                     <th>Number</th>
                     <th>Project</th>
+                    <th>Course</th>
                     <th>Semester</th>
                     <th>Description</th>
                 </tr>
@@ -45,7 +46,14 @@
                         <td> {{ $i + 1 }} </td>
 
                         {{-- Project --}}
-                        <td> {{ $pro }} </td>
+                        <td>
+                            <a href="project/{{ $pro['code'] }}">
+                                {{ $pro['title'] }}
+                            </a>
+                        </td>
+
+                        {{-- Course --}}
+                        <td> {{ $pro['course'] }} </td>
 
                         {{-- Semester --}}
                         <td> {{ $semester }} </td>
